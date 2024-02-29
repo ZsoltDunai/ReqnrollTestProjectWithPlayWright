@@ -28,7 +28,7 @@ public class StepDefinitions(IPageService pageService)
         var tableRows = dataTable.ToDictionary();
         foreach (var row in tableRows)
         {
-            var textMatches = await _pageService.SupportPage.TextContainsGivenValue(row.Value);
+            var textMatches = await _pageService.SupportPage.TextContainsGivenValueAsync(row.Value);
             textMatches.Should().BeTrue();
         }
     }

@@ -9,7 +9,7 @@ public class SupportPage(IPageDependencyService pageDependencyService)
 
     public ILocator StrongTexts => _pageDependencyService.Page.Result.Locator("strong");
 
-    public async Task<bool> TextContainsGivenValue(string value)
+    public async Task<bool> TextContainsGivenValueAsync(string value)
     {
         foreach (var text in await StrongTexts.ElementHandlesAsync())
         {
